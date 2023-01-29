@@ -25,6 +25,7 @@ def register(request):
             hashed_password = make_password(form.cleaned_data.get('password1'))
             user = form.save(commit=False)
             user.password = hashed_password
+            user.backend = 'django.contrib.auth.backends.ModelBackend'
             user.save()
             login(request, user)
             return redirect('home')

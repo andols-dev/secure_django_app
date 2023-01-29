@@ -19,7 +19,7 @@ from django.urls import path,include
 from users.views import home
 from core.settings import HONEYPOT_URL
 urlpatterns = [
-    path('',home),
+    path('',home, name='home'),
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path(f'{HONEYPOT_URL}/', admin.site.urls),
     path('users/',include('users.urls')),
