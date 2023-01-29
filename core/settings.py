@@ -31,7 +31,13 @@ INSTALLED_APPS = [
     'axes',
     'users',
     'admin_honeypot',
+    'crispy_forms',
+    "crispy_bootstrap5",
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 AUTHENTICATION_BACKENDS = [
    'axes.backends.AxesBackend', # Axes must be first
    'django.contrib.auth.backends.ModelBackend',
